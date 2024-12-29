@@ -1,4 +1,8 @@
 <?php
+// Creación del Espacio de nombres 
+namespace ejercicios_clases_interfaces\ejercicio3\classes\Componente;
+
+use Exception;
 // Creación de la clase
 class Componente{
     // Propiedades de la clase
