@@ -47,10 +47,9 @@ class Direccion{
     }
 
     // Método clonación de objetos
-    public function __clone(Direccion $objeto): Direccion
+    public function __clone()
     {
-        $objeto_clonado = clone $objeto;
-        return $objeto_clonado;
+        $objeto_clonado = $this->__clone();
     }
 
     // Método que muestra el objeto en una línea
