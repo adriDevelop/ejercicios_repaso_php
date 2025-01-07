@@ -10,22 +10,14 @@ class Componente{
     protected string $descripcion;
     protected float $precio;
     // Constante de la que solamente puede pertenecer el tipo
-    private const TIPO = ['PLACA', 'MICRO', 'RAM', 'HD'];
+    public const TIPO = ['PLACA', 'MICRO', 'RAM', 'HD'];
 
     // Constructor
     public function __construct(string $tipo, string $descripcion, float $precio)
     {
-        try{
-            if (array_key_exists($tipo, self::TIPO)){
                 $this->tipo = $tipo;
                 $this->descripcion = $descripcion;
                 $this->precio = $precio;
-            } else {
-                throw new Exception("El tipo seleccionado no es correcto");
-            }
-        }catch(Exception $e){
-            return $e->getMessage();
-        }
     }
 
     // GETTERS y Setters

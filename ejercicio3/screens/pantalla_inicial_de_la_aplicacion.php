@@ -65,6 +65,7 @@ else if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     $cliente = new Cliente($datos_saneados['email_cliente'], $datos_saneados['nombre_cliente'], new Direccion($datos_saneados['tipo_via'], $datos_saneados['nombre_via'], $datos_saneados['numero'], $datos_saneados['localidad'], $datos_saneados['provincia'], $datos_saneados['pais']));
 
     if ($cliente){
+        $_SESSION['cliente'] = $cliente->getNombreCompleto();
         echo "<h1>Cliente {$cliente->__toString()}</h1>";
         echo "<a href='pantalla_anadir_componentes.php'>Siguiente página</a>";
     }
